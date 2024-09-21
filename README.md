@@ -48,4 +48,8 @@ Start the server
 
 **Server:** Node, Express, MongoDB
 
+## Demo
+
+https://github.com/user-attachments/assets/e0dc13fa-c687-48b5-aa2c-bcf7e11185d9
+
 Enjoy building your own shopping experience!
