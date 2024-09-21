@@ -25,6 +25,3 @@ app.listen(port, () => {
     connectDB();
     console.log(`Example app listening on port http://localhost:${port}`);
 })
-
-// 2AIxB3rTgi1DxIQB
-// rishavbhowmick2002va
