@@ -49,7 +49,7 @@ const Navbar = () => {
 
 					<Switch size='lg'
 						onChange={toggleColorMode}
-						colorScheme="red"
+						colorScheme="teal"
 					></Switch>
 					{colorMode === "light" ? <IoMoon color="black" /> : <LuSun size='20' color="white" />}
 
