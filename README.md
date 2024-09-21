@@ -1,6 +1,6 @@
 
 # MERN Store App
-Welcome to the MERN Store App, a sleek full-stack web application designed for showcasing shopping items. The frontend is beautifully crafted using Chakra UI, ensuring a modern and user-friendly experience.
+Welcome to the MERN Store App, a sleek full-stack web application designed for showcasing shopping items. The frontend is beautifully crafted using Chakra UI, ensuring a modern and user-friendly experience with dark mode 🦉.
 
 
 ## Environment Variables
