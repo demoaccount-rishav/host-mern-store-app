@@ -7,7 +7,7 @@ import Navbar from './components/Navbar.jsx';
 
 function App() {
   return (
-    <Box bg={useColorModeValue("gray.100", "gray.900")} w='100%' p={4} color='white'>
+    <Box sx={{ userSelect: 'none' }} bg={useColorModeValue("gray.100", "gray.900")} w='100%' p={4} color='white'>
       <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />

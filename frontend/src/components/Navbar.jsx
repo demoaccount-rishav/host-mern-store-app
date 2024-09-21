@@ -1,4 +1,4 @@
-import { Button, Container, Flex, HStack, Text, useColorMode } from "@chakra-ui/react";
+import { Button, Container, Flex, HStack, Stack, Switch, Text, useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import { IoMoon } from "react-icons/io5";
@@ -30,7 +30,7 @@ const Navbar = () => {
 					bgClip={"text"}
 				>
 					<HStack>
-						<FaStore size={25} color="orange"/>
+						<FaStore size={25} color="orange" />
 						<Link to={"/"}>Gadget Store</Link>
 					</HStack>
 
@@ -38,17 +38,28 @@ const Navbar = () => {
 
 				<HStack spacing={2} alignItems={"center"}>
 					<Link to={"/create"} >
-						<Button _hover={{
-							bgGradient: 'linear(to-r, red.500, yellow.500)',
-						}}>
+						<Button
+							// isDisabled
+							_hover={{
+								bgGradient: 'linear(to-r, red.500, yellow.500)',
+							}}>
 							<PlusSquareIcon fontSize={20} />
 						</Button>
 					</Link>
-					<Button _hover={{
-						bgGradient: 'linear(to-r, red.500, yellow.500)',
-					}} onClick={toggleColorMode}>
-						{colorMode === "light" ? <IoMoon /> : <LuSun size='20' />}
-					</Button>
+
+					<Switch size='lg'
+						onChange={toggleColorMode}
+						colorScheme="red"
+					></Switch>
+					{colorMode === "light" ? <IoMoon color="black" /> : <LuSun size='20' color="white" />}
+
+					{/* <Button
+						_hover={{
+							bgGradient: 'linear(to-r, red.500, yellow.500)',
+						}}
+						onClick={toggleColorMode}
+					>
+					</Button> */}
 				</HStack>
 			</Flex>
 		</Container>

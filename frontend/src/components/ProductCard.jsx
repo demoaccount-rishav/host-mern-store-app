@@ -35,45 +35,27 @@ const ProductCard = ({ product }) => {
 
     const handleDeleteProduct = async (pid) => {
         const { success, message } = await deleteProduct(pid);
-        if (!success) {
-            toast({
-                title: "Error",
-                description: message,
-                status: "error",
-                duration: 3000,
-                isClosable: true,
-            });
-        } else {
-            toast({
-                title: "Success",
-                description: message,
-                status: "success",
-                duration: 3000,
-                isClosable: true,
-            });
-        }
+
+        toast({
+            title: success ? "Success" : "Error",
+            description: message,
+            status: success ? "success" : "error",
+            duration: 3000,
+            isClosable: true,
+        });
     };
 
     const handleUpdateProduct = async (pid, updatedProduct) => {
         const { success, message } = await updateProduct(pid, updatedProduct);
         onClose();
-        if (!success) {
-            toast({
-                title: "Error",
-                description: message,
-                status: "error",
-                duration: 3000,
-                isClosable: true,
-            });
-        } else {
-            toast({
-                title: "Success",
-                description: "Product update successful",
-                status: "success",
-                duration: 4000,
-                isClosable: true,
-            });
-        }
+
+        toast({
+            title: success ? "Success" : "Error",
+            description: success ? "Product update successful" : message,
+            status: success ? "success" : "error",
+            duration: success ? 4000 : 3000,
+            isClosable: true,
+        });
     };
 
     return (
@@ -90,7 +72,14 @@ const ProductCard = ({ product }) => {
             bg={bg}
             pt={5}
         >
-            <Image src={product.image} alt={product.name} h={48} w='full' objectFit='contain' />
+            <Image
+                draggable={false}
+                src={product.image}
+                alt={product.name}
+                h={48}
+                w='full'
+                objectFit='contain'
+            />
 
             <Box p={4}>
                 <Heading as='h3' size='md' mb={2} color={textColor}>
@@ -98,23 +87,27 @@ const ProductCard = ({ product }) => {
                 </Heading>
 
                 <Text fontWeight='bold' fontSize='xl' color={textColor} mb={4}>
-                    ₹{product.price}
+                    ₹{product.price
+                        .toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                 </Text>
 
                 <HStack spacing={2}>
-                    <IconButton icon={<EditIcon />} onClick={onOpen} colorScheme='blue' />
+                    <IconButton
+                        icon={<EditIcon />}
+                        onClick={onOpen}
+                        colorScheme='teal'
+                    />
                     <IconButton
                         icon={<DeleteIcon />}
                         onClick={() => handleDeleteProduct(product._id)}
-                        colorScheme='red'
+                        colorScheme='purple'
                     />
                 </HStack>
             </Box>
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-
-                <ModalContent >
+                <ModalContent>
                     <ModalHeader>Update Product</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
@@ -170,4 +163,5 @@ const ProductCard = ({ product }) => {
         </Box>
     );
 };
+
 export default ProductCard;

@@ -80,7 +80,9 @@ const CreatePage = () => {
 							onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
 						/>
 
-						<Button colorScheme='blue' onClick={handleAddProduct} w='full'
+						<Button 
+						// isDisabled 
+						colorScheme='blue' onClick={handleAddProduct} w='full'
 							bgGradient='linear(to-r, teal.500, green.500)'
 							_hover={{
 								bgGradient: 'linear(to-r, red.500, yellow.500)',
