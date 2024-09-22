@@ -41,6 +41,15 @@ const CreatePage = () => {
 
 	return (
 		<Container maxW={"container.sm"}>
+			{
+				toast({
+					title: "Warning !",
+					description: 'Add new product button is temporarily disabled..',
+					status: "error",
+					isClosable: true,
+					duration: 4000
+				})
+			}
 			<VStack spacing={8}>
 				<Heading as={"h2"} size={"2xl"} textAlign={"center"} mb={8} textTransform={"uppercase"} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip={"text"}>
 					Create New Product
