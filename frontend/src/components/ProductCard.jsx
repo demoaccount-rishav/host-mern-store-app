@@ -94,11 +94,13 @@ const ProductCard = ({ product }) => {
                 <HStack spacing={2}>
                     <IconButton
                         icon={<EditIcon />}
+                        isDisabled
                         onClick={onOpen}
                         colorScheme='teal'
                     />
                     <IconButton
                         icon={<DeleteIcon />}
+                        isDisabled
                         onClick={() => handleDeleteProduct(product._id)}
                         colorScheme='purple'
                     />

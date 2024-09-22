@@ -39,7 +39,7 @@ const Navbar = () => {
 				<HStack spacing={2} alignItems={"center"}>
 					<Link to={"/create"} >
 						<Button
-							// isDisabled
+							isDisabled
 							_hover={{
 								bgGradient: 'linear(to-r, red.500, yellow.500)',
 							}}>

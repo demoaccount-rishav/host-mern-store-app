@@ -81,7 +81,7 @@ const CreatePage = () => {
 						/>
 
 						<Button 
-						// isDisabled 
+						isDisabled 
 						colorScheme='blue' onClick={handleAddProduct} w='full'
 							bgGradient='linear(to-r, teal.500, green.500)'
 							_hover={{
